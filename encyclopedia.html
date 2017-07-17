@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>体检百科</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="encyclopedia.css">
+    <script src="rem.js"></script>
+</head>
+<body>
+    <div class="box">
+    	<div class="nav">
+    		<div class="search">
+      
+                <input class="intext" type="text" name="" placeholder="搜索" onkeydown="fn()">
+           
+    			<div class="sicon">
+    				
+    			</div>
+    		</div>
+    	</div>
+    	<div class="content">
+    		<ul class="ul" id="ul1">
+    			<li class="firstli">A</li>
+    			<li class="commonli" data-title="Aa哎细胞 ">哎细胞</li>
+    			<li class="commonli" data-title="Aa66白细胞">66哎白细胞</li>
+    			<li class="commonli" data-title="Aa66白细胞">66哎白细胞</li>
+    			<li class="commonli" data-title="Aa66白细胞">66哎白细胞</li>
+    		</ul>
+    		<ul class="ul" id="ul2">
+    			<li class="firstli">B</li>
+    			<li class="commonli" data-title="Bba白细胞">白细胞</li>
+    			<li class="commonli" data-title="Bb白细胞">白细胞</li>
+    		</ul>
+    		<ul class="ul" id="ul3">
+    			<li class="firstli" >C</li>
+    			<li class="commonli" data-title="Cca才细胞">a才细胞</li>
+    			<li class="commonli" data-title="Cc才细胞">才细胞</li>
+    			<li class="commonli" data-title="Cc才细胞">才细胞</li>
+    			<li class="commonli" data-title="Cc才细胞">才细胞</li>
+    		</ul>
+    		<ul class="ul" id="ul4">
+    			<li class="firstli">D</li>
+    			<li class="commonli">d细胞</li>
+    			<li class="commonli">d细胞</li>
+    		</ul>
+    		<ul class="ul" id="ul5">
+    			<li class="firstli">E</li>
+    			<li class="commonli">e细胞</li>
+    			<li class="commonli">e细胞</li>
+    		</ul>
+    		<ul class="ul" id="ul6">
+    			<li class="firstli">F</li>
+    			<li class="commonli">f细胞</li>
+    			<li class="commonli">f细胞</li>
+    		</ul>
+    	</div>
+    </div>
+    <ul class="letterul">
+    	<li style="color: #2078c0">A</li>
+    	<li>B</li>
+    	<li>C</li>
+    	<li>D</li>
+    	<li>E</li>
+    	<li>F</li>
+    	<li>G</li>
+    	<li>H</li>
+    	<li>I</li>
+    	<li>J</li>
+    	<li>K</li>
+    	<li>L</li>
+    	<li>M</li>
+    	<li>N</li>
+    	<li>O</li>
+    	<li>P</li>
+    	<li>Q</li>
+    	<li>R</li>
+    	<li>S</li>
+    	<li>T</li>
+    	<li>U</li>
+    	<li>V</li>
+    	<li>W</li>
+    	<li>X</li>
+    	<li>Y</li>
+    	<li>Z</li>
+    	<li>#</li>
+    </ul>
+</body>
+<script src='jquery.min.js'></script>
+<script src='encyclopedia.js'></script>
+<script>
+// 手机键盘的回车键
+    function fn(event){
+       ev = event || window.event;
+       if(ev.keyCode == 13){
+            var val = $(".intext").val();
+        if(val!=""){
+            // 不为空时才能查询
+            // $(".intext").blur();
+           sousuobol=2;
+           $(".intext").blur();
+            $(".letterul").hide();
+            $(".ul").hide();
+            $(".commonli").hide();
+            $(".commonli[data-title*="+val+"]").show();
+            $(".commonli[data-title*="+val+"]").parent().show();
+        }else {
+            // 为空时全部显示
+            // $(".intext").blur();
+            sousuobol=1;
+            $(".intext").blur();
+            setTimeout(function(){
+                 $(".letterul").show();
+            },500)
+            $(".ul").show();
+            $(".commonli").show();
+        }
+       }
+}
+</script>
+</html>
